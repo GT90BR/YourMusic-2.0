@@ -1,0 +1,665 @@
+@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@300..700&display=swap'); /* Importa a fonte Quicksand do Google Fonts */
+
+* {
+    box-sizing: border-box; /* Garante que padding e border não aumentem o tamanho total do elemento */
+}
+
+:root {
+    --primary-color: #8ab4f8; /* Cor primária (azul claro) */
+    --secondary-color: #e8eaed; /* Cor secundária (cinza claro) */
+    --tertiary-color: #ffffff; /* Cor terciária (cinza médio) */
+    --bg-color: #202124; /* Cor de fundo (cinza escuro) */
+}
+
+html {
+    /* Habilita a rolagem suave para links de âncora */
+    scroll-behavior: smooth;
+}
+
+/* === LAYOUT BASE === */
+
+body {
+    margin: 0; /* Remove a margem padrão do body */
+    /* Imagem de fundo para a página principal */
+    background-color: var(--bg-color); /* Cor de fundo caso a imagem não carregue */
+    background-image: url('FundoSite.png'); /* Adiciona a imagem de fundo */
+    background-size: cover; /* Faz a imagem cobrir toda a área */
+    background-position: center; /* Centraliza a imagem */
+    background-attachment: fixed; /* Mantém a imagem fixa durante a rolagem */
+    background-repeat: no-repeat; /* Impede a repetição da imagem */
+    color: var(--secondary-color); /* Define a cor do texto padrão usando uma variável */
+    font-family: "Quicksand", sans-serif; /* Define a família da fonte */
+}
+
+main {
+    max-width: 80rem; /* Largura máxima do conteúdo principal */
+    margin: 0 auto; /* Centraliza o conteúdo principal horizontalmente */
+    margin-top: 2rem; /* Margem no topo */
+    padding-bottom: 6rem; /* Aumenta o espaço para o rodapé fixo não cobrir o conteúdo */
+}
+
+/* Esconde o conteúdo principal por padrão */
+header, main, footer {
+    display: none;
+    opacity: 0;
+    transition: opacity 0.5s ease-in-out;
+}
+
+/* === SEÇÃO HERO (HOME) === */
+
+.hero {
+    height: 100vh; /* Ocupa a altura total da tela */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 0 2rem;
+    position: relative; /* Necessário para a sobreposição */
+    background-image: url('Background.jpg');
+    background-size: cover;
+    background-position: center;
+    width: 100%; /* Garante que a seção ocupe toda a largura */
+    top: 0; /* Alinha no topo */
+    left: 0; /* Alinha na esquerda */
+    position: fixed; /* Garante que a seção .hero permaneça fixa */
+    transition: opacity 0.5s ease-in-out, visibility 0.5s; /* Mantém as transições */
+}
+
+.hero::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.6); /* Sobreposição escura para contraste */
+}
+
+.hero-content {
+    position: relative; /* Garante que o conteúdo fique acima da sobreposição */
+    z-index: 2;
+    color: white;
+}
+
+.hero-title {
+    font-size: 3.5rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+}
+
+.hero-subtitle {
+    font-size: 1.5rem;
+    font-weight: 300;
+    max-width: 600px;
+    margin: 0 auto 2rem; /* Garante a centralização e adiciona margem inferior */
+}
+
+/* === COMPONENTES === */
+
+header {
+    padding: 2rem 1rem; /* Espaçamento interno (2rem em cima/baixo, 1rem nos lados) */
+    display: flex; /* Habilita o layout flexbox */
+    align-items: center; /* Alinha os itens verticalmente ao centro */
+    justify-content: space-around; /* Distribui os itens com espaço ao redor */
+    position: sticky; /* Mantém o cabeçalho fixo no topo ao rolar a página */
+    /* Aplicando o estilo coeso com o resto do site */
+    background: rgba(32, 33, 36, 0.7); /* Fundo com efeito de vidro */
+    backdrop-filter: blur(10px); /* Desfoca o que está atrás */
+    -webkit-backdrop-filter: blur(10px); /* Suporte para Safari */
+    border-bottom: 1px solid rgba(232, 234, 237, 0.1); /* Borda sutil na parte inferior */
+    top: 0; /* Posição do topo quando sticky */
+    z-index: 10; /* Define a ordem de empilhamento para ficar sobre outros elementos */
+    gap: 1rem; /* Espaçamento entre os elementos flex */
+    transition: transform 0.3s ease-in-out; /* Adiciona transição suave para o efeito de esconder/mostrar */
+}
+
+.header--hidden {
+    transform: translateY(-100%); /* Desliza o header para fora da tela (para cima) */
+}
+
+/* --- Contêiner do Título e Ícone Home --- */
+.header-title-container {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.home-link {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    text-decoration: none;
+    color: inherit;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+}
+
+.home-link:hover {
+    transform: scale(1.05);
+}
+
+.home-icon {
+    font-size: 1.8rem;
+    color: var(--primary-color);
+}
+
+/* --- Navegação por Ícones de Gênero --- */
+.genre-nav {
+    display: flex;
+    gap: 1.5rem;
+    margin: 1rem 0;
+}
+
+.genre-icon {
+    font-size: 1.8rem;
+    transition: transform 0.3s ease, color 0.3s ease;
+}
+
+.genre-icon:hover {
+    transform: scale(1.2);
+}
+
+/* Cores dos ícones para combinar com os títulos */
+.rock-icon {
+    color: #C62828;
+}
+
+.pop-icon {
+    color: #FF4081;
+}
+
+.trap-icon {
+    color: #7E57C2;
+}
+
+.indie-icon {
+    color: #26A69A; /* Verde-azulado */
+}
+
+.eletronica-icon {
+    color: #42A5F5; /* Azul claro */
+}
+
+
+.home-link h1 {
+    font-size: 1.5rem; /* Tamanho da fonte */
+    margin: 0; /* Remove a margem padrão */
+    font-weight: 500; /* Peso da fonte (médio) */
+    white-space: nowrap; /* Impede a quebra de linha do texto */
+}
+
+/* --- Área de Busca --- */
+.search-container {
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+#caixaBusca {
+    padding: 12px 15px; /* Espaçamento interno */
+    padding-right: 45px; /* Adiciona espaço à direita para o ícone */
+    border-radius: 50px; /* Bordas totalmente arredondadas */
+    border: 1px solid rgba(232, 234, 237, 0.1);
+    outline: none; /* Remove o contorno ao focar */
+    background: rgba(32, 33, 36, 0.6); /* Fundo com efeito de vidro */
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    font-family: inherit; /* Herda a família da fonte do elemento pai */
+    transition: all 0.2s ease; /* Adiciona uma transição suave para todas as propriedades */
+    width: 30rem; /* Largura do input */
+    color: var(--secondary-color); /* Cor do texto digitado */
+}
+
+#caixaBusca::placeholder {
+    font-size: 1.2rem; /* Tamanho da fonte do placeholder */
+    font-weight: 300; /* Peso da fonte do placeholder */
+    color: rgba(232, 234, 237, 0.5); /* Cor do placeholder mais sutil */
+}
+
+#caixaBusca:focus {
+    outline: none; /* Remove a borda de foco padrão */
+    border-color: rgba(138, 180, 248, 0.5);
+}
+
+#botao-busca {
+    position: absolute;
+    right: 5px;
+    height: 40px;
+    width: 40px;
+    border-radius: 50%;
+    border: none;
+    cursor: pointer; /* Muda o cursor para uma mão ao passar por cima */
+    background-color: transparent; /* Fundo transparente */
+    color: var(--secondary-color); /* Cor do texto */
+}
+
+#botao-busca:hover {
+    background-color: rgba(138, 180, 248, 0.1); /* Fundo azul sutil ao passar o mouse */
+    color: var(--primary-color); /* Muda a cor do texto ao passar o mouse */
+}
+
+#botao-busca:active {
+    transform: scale(0.98); /* Efeito de clique (diminui o tamanho) */
+}
+
+/* --- Botão da Seção Hero --- */
+.hero-button {
+    display: inline-block;
+    padding: 1rem 2.5rem;
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: white;
+    background-color: #E0005E; /* Usa a cor magenta vibrante */
+    border: none;
+    border-radius: 50px; /* Bordas bem arredondadas */
+    text-decoration: none;
+    transition: transform 0.3s ease, background-color 0.3s ease;
+}
+
+.hero-button:hover {
+    transform: scale(1.05);
+    background-color: #FF4081; /* Cor mais clara no hover */
+}
+
+/* --- Seções de Gênero --- */
+.genre-section {
+    margin-bottom: 4rem; /* Adiciona um bom espaçamento entre as seções de gênero */
+}
+
+.genre-title {
+    font-size: 2.5rem;
+    font-weight: 700;
+    padding-bottom: 0.5rem;
+    margin-top: 0; /* Remove a margem padrão do h2 */
+    margin-bottom: 2rem; /* Adiciona espaço entre o título e os cards de artistas */
+    border-bottom-style: solid;
+    border-bottom-width: 2px;
+}
+
+.card-container {
+    /* Organiza os cards de artistas em um grid responsivo */
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 1.5rem;
+}
+
+/* --- Cores específicas para cada gênero --- */
+#rock-section .genre-title {
+    color: #C62828; /* Vermelho Escuro Intenso */
+    border-bottom-color: #C62828;
+}
+
+#pop-section .genre-title {
+    color: #FF4081; /* Rosa Vibrante */
+    border-bottom-color: #FF4081;
+}
+
+#trap-section .genre-title {
+    color: #7E57C2; /* Roxo Intenso */
+    border-bottom-color: #7E57C2;
+}
+
+/* --- Cores específicas para cada gênero --- */
+#indie-section .genre-title {
+    color: #26A69A; /* Verde-azulado */
+    border-bottom-color: #26A69A;
+}
+
+#eletronica-section .genre-title {
+    color: #42A5F5; /* Azul claro */
+    border-bottom-color: #42A5F5;
+}
+
+/* --- Cards de Música --- */
+.card {
+    /* Efeito de vidro fosco (Glassmorphism) */
+    background-color: rgba(32, 33, 36, 0.6); /* Fundo escuro com 60% de opacidade */
+    backdrop-filter: blur(10px); /* Desfoca o que está atrás do card */
+    -webkit-backdrop-filter: blur(10px); /* Suporte para Safari */
+    
+    border-radius: 16px; /* Bordas arredondadas para um look moderno */
+    border: 1px solid rgba(232, 234, 237, 0.1); /* Borda sutil para definir o contorno */
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.2); /* Sombra para dar profundidade */
+    
+    padding: 1.5rem; /* Espaçamento interno uniforme */
+    margin-bottom: 1.25rem; /* Margem inferior */
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Transição suave para o hover */
+}
+
+.card:hover {
+    transform: translateY(-8px); /* Eleva o card ao passar o mouse */
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3); /* Aumenta a sombra no hover */
+    cursor: pointer; /* Muda o cursor para uma mão */
+}
+
+.card--chase-atlantic {
+    /* Sobrepõe o fundo padrão com a imagem específica */
+    background: 
+        /* 1. Camada de cor semi-transparente por cima */
+        linear-gradient(rgba(32, 33, 36, 0.7), rgba(32, 33, 36, 0.7)),
+        /* 2. Imagem de fundo por baixo */
+        url('chaseatlantic.jpg');
+    background-size: cover;
+    background-position: center;
+}
+
+.card--the-weeknd {
+    /* Sobrepõe o fundo padrão com a imagem específica */
+    background: 
+        /* 1. Camada de cor semi-transparente por cima */
+        linear-gradient(rgba(32, 33, 36, 0.7), rgba(32, 33, 36, 0.7)),
+        /* 2. Imagem de fundo por baixo */
+        url('theWeekend.jpg');
+    background-size: cover; /* Garante que a imagem cubra todo o card */
+    background-position: center top; /* Prioriza o rosto do artista */
+}
+
+.card--arctic-monkeys {
+    /* Sobrepõe o fundo padrão com a imagem específica */
+    background: 
+        /* 1. Camada de cor semi-transparente por cima */
+        linear-gradient(rgba(32, 33, 36, 0.7), rgba(32, 33, 36, 0.7)),
+        /* 2. Imagem de fundo por baixo */
+        url('arcticMonkeys.jpg');
+    background-size: cover; /* Garante que a imagem cubra todo o card */
+    background-position: center top;
+}
+
+.card--the-strokes {
+    /* Sobrepõe o fundo padrão com a imagem específica */
+    background: 
+        /* 1. Camada de cor semi-transparente por cima */
+        linear-gradient(rgba(32, 33, 36, 0.7), rgba(32, 33, 36, 0.7)),
+        /* 2. Imagem de fundo por baixo */
+        url('theStrokes.jpg');
+    background-size: cover; /* Garante que a imagem cubra todo o card */
+    background-position: center -90px;
+}
+
+.card--dua-lipa {
+    /* Sobrepõe o fundo padrão com a imagem específica */
+    background: 
+        /* 1. Camada de cor semi-transparente por cima */
+        linear-gradient(rgba(32, 33, 36, 0.7), rgba(32, 33, 36, 0.7)),
+        /* 2. Imagem de fundo por baixo */
+        url('duaLipa.jpg');
+    background-size: cover; /* Garante que a imagem cubra todo o card */
+    background-position: center top; /* Prioriza o rosto da artista */
+}
+
+.card--g-eazy {
+    /* Sobrepõe o fundo padrão com a imagem específica */
+    background: 
+        /* 1. Camada de cor semi-transparente por cima */
+        linear-gradient(rgba(32, 33, 36, 0.7), rgba(32, 33, 36, 0.7)),
+        /* 2. Imagem de fundo por baixo */
+        url('G-Eazy.jpg');
+    background-size: cover; /* Garante que a imagem cubra todo o card */
+    background-position: center top; /* Prioriza o rosto do artista */
+}
+
+.card--travis-scott {
+    background: 
+        linear-gradient(rgba(32, 33, 36, 0.7), rgba(32, 33, 36, 0.7)),
+        url('travisScott.jpg'); /* Adicione esta imagem à sua pasta */
+    background-size: cover;
+    background-position: center;
+}
+
+.card--post-malone {
+    background: 
+        linear-gradient(rgba(32, 33, 36, 0.7), rgba(32, 33, 36, 0.7)),
+        url('postMalone.jpg'); /* Adicione esta imagem à sua pasta */
+    background-size: cover;
+    background-position: center top;
+}
+
+.card--florence-the-machine {
+    background: 
+        linear-gradient(rgba(32, 33, 36, 0.7), rgba(32, 33, 36, 0.7)),
+        url('florence + the machine.jpg');
+    background-size: cover;
+    background-position: center top;
+}
+
+.card--the-xx {
+    background: 
+        linear-gradient(rgba(32, 33, 36, 0.7), rgba(32, 33, 36, 0.7)),
+        url('thexx.jpg'); /* Adicione esta imagem à sua pasta */
+    background-size: cover;
+    background-position: center;
+}
+
+.card--daft-punk {
+    background: 
+        linear-gradient(rgba(32, 33, 36, 0.7), rgba(32, 33, 36, 0.7)),
+        url('Daftpunk.webp'); /* Adicione esta imagem à sua pasta */
+    background-size: cover;
+    background-position: center;
+}
+
+.card h2 {
+    margin-top: 0; /* Remove a margem superior */
+    font-weight: 600; /* Peso da fonte */
+    font-size: 1.6rem; /* Tamanho da fonte */
+    border-bottom: none; /* Sem borda inferior */
+    padding-bottom: 0; /* Sem espaçamento interno inferior */
+    margin-bottom: 0.25rem; /* Margem inferior */
+    color: #00B8D4; /* Ciano Vibrante Escuro */
+}
+
+.card p {
+    margin: 0.5rem 0; /* Margem superior e inferior */
+    line-height: 1.6; /* Altura da linha para melhor legibilidade */
+    font-size: 1rem; /* Tamanho da fonte */
+    margin-bottom: 0.5rem; /* Margem inferior */
+    color: var(--secondary-color); /* Cor do texto */
+}
+
+.card p strong {
+    color: var(--tertiary-color); /* Cor do texto em negrito */
+    font-weight: 400; /* Peso da fonte */
+}
+
+.card a {
+    color: #E0005E; /* Magenta Vibrante Escuro */
+    text-decoration: none; /* Remove o sublinhado padrão */
+    font-weight: 700; /* Deixa o texto em negrito para mais destaque */
+    font-size: 1.2rem; /* Aumenta um pouco mais o tamanho da fonte */
+    display: inline-block; /* Permite a aplicação de margens verticais */
+    margin-top: 0.75rem; /* Aumenta o espaço acima do link */
+}
+
+.card a:hover {
+    text-decoration: underline; /* Adiciona sublinhado ao passar o mouse */
+}
+
+/* --- Rodapé --- */
+.footer {
+    position: fixed; /* Fixo na parte inferior da viewport, independente da rolagem */
+    bottom: 0; /* Alinha na parte inferior */
+    left: 0;
+    right: 0;
+    z-index: 10; /* Garante que fique acima do conteúdo principal */
+
+    /* Aplicando o estilo coeso com o resto do site */
+    background: rgba(32, 33, 36, 0.7); /* Fundo com efeito de vidro */
+    backdrop-filter: blur(10px); /* Desfoca o que está atrás */
+    -webkit-backdrop-filter: blur(10px); /* Suporte para Safari */
+    border-top: 1px solid rgba(232, 234, 237, 0.1); /* Borda sutil no topo */
+    color: var(--tertiary-color); /* Cor do texto */
+}
+
+.footer p {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1.5rem; /* Aumenta o espaçamento entre os ícones */
+    text-align: center;
+    margin: 0;
+    flex-wrap: wrap;
+}
+
+.footer a {
+    font-size: 1.5rem; /* Aumenta o tamanho dos ícones */
+    color: var(--secondary-color); /* Cor do link */
+    text-decoration: none; /* Remove o sublinhado */
+    transition: color 0.2s; /* Transição suave para a cor */
+}
+
+.footer a:hover {
+    color: var(--primary-color); /* Muda a cor do link ao passar o mouse */
+}
+
+/* === CLASSES DE UTILIDADE === */
+
+.glass-effect {
+    background: rgba(32, 33, 36, 0.6); /* Fundo com efeito de vidro */
+    backdrop-filter: blur(10px); /* Desfoca o que está atrás */
+    -webkit-backdrop-filter: blur(10px); /* Suporte para Safari */
+    border: 1px solid rgba(232, 234, 237, 0.1); /* Borda sutil */
+}
+
+/* --- Mensagem de "Nenhum Resultado" --- */
+.no-results {
+    display: none; /* Escondido por padrão */
+    text-align: center;
+    font-size: 1.5rem;
+    font-weight: 500;
+    color: var(--secondary-color);
+    margin: 4rem 0; /* Espaçamento para centralizar verticalmente */
+}
+
+/* --- Estilos do Modal --- */
+.modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+    display: none; /* Começa escondido */
+    align-items: center;
+    justify-content: center;
+    z-index: 1000;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.modal-overlay.visible {
+    display: flex;
+    opacity: 1;
+}
+
+.modal-content {
+    position: relative;
+    padding: 2rem;
+    border-radius: 16px;
+    max-width: 600px;
+    width: 90%;
+    max-height: 80vh;
+    overflow-y: auto;
+    transform: scale(0.9);
+    transition: transform 0.3s ease;
+}
+
+.modal-overlay.visible .modal-content {
+    transform: scale(1);
+}
+
+.modal-close {
+    position: absolute;
+    top: 1rem;
+    right: 1.5rem;
+    background: none;
+    border: none;
+    font-size: 2.5rem;
+    color: var(--secondary-color);
+    cursor: pointer;
+    line-height: 1;
+}
+
+.modal-body {
+    text-align: center;
+}
+
+.modal-artist-img {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 3px solid var(--primary-color);
+    margin-bottom: 1rem;
+}
+
+.modal-content h2 {
+    color: var(--primary-color);
+    margin-bottom: 1rem;
+}
+
+.modal-content ul {
+    list-style: none;
+    padding: 0;
+}
+/* === MEDIA QUERIES (Responsividade) === */
+
+@media (max-width: 768px) {
+    .search-container {
+        width: 100%;
+    }
+    header { /* Estilos para telas com largura máxima de 768px */
+        flex-direction: column; /* Organiza os itens do cabeçalho em coluna */
+        padding: 1rem; /* Reduz o espaçamento interno */
+    }
+
+    header h1 { /* Estilos para o h1 no cabeçalho em telas menores */
+        text-align: center; /* Centraliza o texto */
+        margin-bottom: 1rem; /* Adiciona margem inferior */
+    }
+
+    #caixaBusca { /* Estilos para o input em telas menores */
+        width: 90vw; /* Largura baseada na largura da viewport */
+        font-size: 1.2rem; /* Reduz o tamanho da fonte */
+    }
+
+    main { /* Estilos para o main em telas menores */
+        padding: 0 1rem; /* Adiciona espaçamento lateral */
+    }
+
+    .card:hover { /* Estilos para o article em telas menores */
+        transform: none; /* Remove o efeito de escala ao passar o mouse */
+    }
+}
+
+@media (max-width: 480px) {
+    header h1 { /* Estilos para o h1 em telas com largura máxima de 480px */
+        font-size: 1rem; /* Reduz ainda mais o tamanho da fonte */
+        max-width: 70%; /* Define uma largura máxima */
+        word-wrap: break-word; /* Permite a quebra de palavras longas */
+    }
+
+    #caixaBusca, /* Estilos para o input e seu placeholder em telas muito pequenas */
+    #caixaBusca::placeholder {
+        font-size: 1rem; /* Reduz o tamanho da fonte */
+    }
+
+    .card h2 { /* Estilos para o h2 do article em telas muito pequenas */
+        font-size: 1.3rem; /* Reduz o tamanho da fonte */
+    }
+    
+    .search-container { /* Estilos para a div do cabeçalho em telas muito pequenas */
+        display: flex; /* Habilita flexbox */
+        align-items: center; /* Alinha itens ao centro */
+        justify-content: center; /* Centraliza itens */
+        flex-direction: column; /* Organiza em coluna */
+        gap: 0.5rem; /* Espaçamento entre os itens */
+    }
+    
+    .footer { /* Estilos para o rodapé em telas muito pequenas */
+        display: none; /* Oculta o rodapé */
+    }
+
+    button { /* Estilos para o botão em telas muito pequenas */
+        margin-top: 1rem; /* Adiciona margem no topo */
+    }
+}

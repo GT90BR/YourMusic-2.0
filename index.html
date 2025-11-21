@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <!-- Adiciona a biblioteca de ícones Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <title>Imersão Dev</title>
+</head>
+<body>
+
+    <Header>
+        <div class="header-title-container">
+            <a id="home-button" class="home-link" title="Início">
+                <i class="fa-solid fa-house home-icon"></i>
+                <h1>Inicio.</h1>
+            </a>
+        </div>
+        <nav class="genre-nav">
+            <a href="#rock-section" class="genre-icon rock-icon" title="Rock"><i class="fa-solid fa-guitar"></i></a>
+            <a href="#pop-section" class="genre-icon pop-icon" title="Pop"><i class="fa-solid fa-star"></i></a>
+            <a href="#trap-section" class="genre-icon trap-icon" title="Trap"><i class="fa-solid fa-headphones-simple"></i></a>
+            <a href="#indie-section" class="genre-icon indie-icon" title="Indie"><i class="fa-solid fa-leaf"></i></a>
+            <a href="#eletronica-section" class="genre-icon eletronica-icon" title="Eletrônica"><i class="fa-solid fa-compact-disc"></i></a>
+        </nav>
+        <div class="search-container">
+            <input type="text" id="caixaBusca" placeholder="Digite seu estilo musical">
+            <button id="botao-busca" title="Buscar"><i class="fa-solid fa-magnifying-glass"></i></button>
+        </div>
+    </Header>
+
+    <section class="hero">
+        <div class="hero-content">
+            <h1 class="hero-title">Sua Jornada Musical Começa Aqui</h1>
+            <p class="hero-subtitle">Descubra artistas, explore gêneros e encontre sua próxima obsessão sonora.</p>
+            <button id="explore-button" class="hero-button">Explorar Agora</button>
+        </div>
+    </section>
+
+    <Main>
+        <div id="no-results-message" class="no-results"></div>
+        <section id="rock-section" class="genre-section">
+            <h2 class="genre-title">Rock</h2>
+            <div class="card-container"></div>
+        </section>
+        <section id="pop-section" class="genre-section">
+            <h2 class="genre-title">Pop</h2>
+            <div class="card-container"></div>
+        </section>
+        <section id="trap-section" class="genre-section">
+            <h2 class="genre-title">Trap</h2>
+            <div class="card-container"></div>
+        </section>
+        <section id="indie-section" class="genre-section">
+            <h2 class="genre-title">Indie</h2>
+            <div class="card-container"></div>
+        </section>
+        <section id="eletronica-section" class="genre-section">
+            <h2 class="genre-title">Eletrônica</h2>
+            <div class="card-container"></div>
+        </section>
+    </Main>
+
+    <footer class="footer">
+        <p>
+            <a href="https://github.com/GT90BR" target="_blank" rel="noopener noreferrer" title="GitHub"><i class="fa-brands fa-github"></i></a>
+            <a href="https://www.linkedin.com/in/gabriel-thomaz-6b9835338/" target="_blank" rel="noopener noreferrer" title="Linkedin"><i class="fa-brands fa-linkedin"></i></a>
+            - Desenvolvido por Gabriel Thomaz
+        </p>
+    </footer>
+
+    <!-- Modal do Artista -->
+    <div id="artist-modal" class="modal-overlay">
+        <div class="modal-content glass-effect">
+            <button id="modal-close-button" class="modal-close">&times;</button>
+            <div class="modal-body">
+                <img id="modal-artist-image" src="" alt="Foto do Artista" class="modal-artist-img">
+                <h2 id="modal-artist-name"></h2>
+                <p id="modal-artist-summary"></p>
+                <h3>Músicas Famosas</h3>
+                <ul id="modal-song-list"></ul>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,112 @@
+[
+{
+    "Nome": "Chase Atlantic",
+    "Descrição": "Trio australiano de R&B alternativo.",
+    "genero": "Pop", 
+    "ano": "2014",
+    "link": "https://open.spotify.com/intl-pt/artist/7cYEt1pqMgXJdq00hAwVpT",
+    "resumo": "Chase Atlantic é uma banda australiana que mistura elementos de R&B alternativo, pop e rock. Conhecidos por sua estética sombria e produção moderna, eles ganharam popularidade com uma sonoridade única e letras que exploram temas como luxúria e excessos.",
+    "musicasFamosas": ["Swim", "Into It", "Friends", "Okay"],
+    "imagem": "chaseatlantic.jpg"
+},
+{
+    "Nome": "G-Eazy",
+    "Descrição": "Rapper e produtor musical americano.",
+    "genero": "Trap", 
+    "ano": "2014",
+    "link": "https://open.spotify.com/intl-pt/artist/02kJSzxNuaWGqwubyUba0Z",
+    "resumo": "Gerald Earl Gillum, conhecido como G-Eazy, é um rapper e produtor de Oakland, Califórnia. Seu estilo combina o rap com influências de rock and roll dos anos 50, criando uma persona de 'James Dean do rap'.",
+    "musicasFamosas": ["Me, Myself & I", "No Limit", "I Mean It", "Him & I"],
+    "imagem": "G-Eazy.jpg"
+},
+{
+    "Nome": "The Weeknd",
+    "Descrição": "Artista canadense conhecido por seu som R&B alternativo.",
+    "genero": "Pop", 
+    "ano": "2011",
+    "link": "https://open.spotify.com/artist/1Xyo4u8uXC1ZmMpatF05PJ",
+    "resumo": "Abel Tesfaye, o The Weeknd, revolucionou o R&B com suas mixtapes sombrias e cinematográficas. Sua música evoluiu para o synth-pop, tornando-o um dos maiores astros pop do mundo, conhecido por hits globais e narrativas visuais complexas.",
+    "musicasFamosas": ["Blinding Lights", "Starboy", "Save Your Tears", "Can't Feel My Face"],
+    "imagem": "theWeekend.jpg"
+},
+{
+    "Nome": "Arctic Monkeys",
+    "Descrição": "Banda de rock britânica formada em Sheffield.",
+    "genero": "Rock", 
+    "ano": "2006",
+    "link": "https://open.spotify.com/artist/7Ln80lUS6He07XvHI8qqHH",
+    "resumo": "Surgindo como um fenômeno da internet, os Arctic Monkeys se tornaram uma das maiores bandas de rock do século XXI. Liderados pelo letrista Alex Turner, eles transitaram do indie rock energético para um som mais sofisticado e lounge.",
+    "musicasFamosas": ["Do I Wanna Know?", "505", "R U Mine?", "I Bet You Look Good On The Dancefloor"],
+    "imagem": "arcticMonkeys.jpg"
+},
+{
+    "Nome": "Travis Scott",
+    "Descrição": "Rapper, cantor e produtor musical americano.",
+    "genero": "Trap", 
+    "ano": "2015",
+    "link": "https://open.spotify.com/intl-pt/artist/0Y5tJX1MQlPlqiwlOH1tJY",
+    "resumo": "Jacques Webster II, ou Travis Scott, é conhecido por sua fusão de hip hop tradicional com elementos de lo-fi e ambient, criando um som psicodélico e energético. Seus shows ao vivo são famosos por sua alta intensidade.",
+    "musicasFamosas": ["SICKO MODE", "goosebumps", "HIGHEST IN THE ROOM", "BUTTERFLY EFFECT"],
+    "imagem": "travisScott.jpg"
+},
+{
+    "Nome": "The Strokes",
+    "Descrição": "Banda de rock americana creditada por reviver o garage rock.",
+    "genero": "Rock",
+    "ano": "2001",
+    "link": "https://open.spotify.com/artist/0epOFNiUfyON9EYx7Tpr6V",
+    "resumo": "The Strokes lideraram o renascimento do rock de garagem no início dos anos 2000. Com seu som cru, guitarras angulares e o vocal despreocupado de Julian Casablancas, eles definiram a sonoridade de Nova York para uma nova geração.",
+    "musicasFamosas": ["Last Nite", "Reptilia", "Someday", "The Adults Are Talking"],
+    "imagem": "theStrokes.jpg"
+},
+{
+    "Nome": "Dua Lipa",
+    "Descrição": "Cantora e compositora inglesa conhecida por seu som disco-pop.",
+    "genero": "Pop",
+    "ano": "2017",
+    "link": "https://open.spotify.com/artist/6M2wZ9GZgrQXHCFfjv46we",
+    "resumo": "Dua Lipa se tornou um ícone do pop moderno com seu som 'future nostalgia', que mistura disco, pop e funk. Sua presença de palco magnética e uma série de hits a consolidaram como uma das principais artistas pop da atualidade.",
+    "musicasFamosas": ["Don't Start Now", "Levitating", "New Rules", "One Kiss"],
+    "imagem": "duaLipa.jpg"
+},
+{
+    "Nome": "Post Malone",
+    "Descrição": "Artista americano que mistura gêneros como hip hop, pop e rock.",
+    "genero": "Trap",
+    "ano": "2016",
+    "link": "https://open.spotify.com/artist/246dkjvS1zLTtiykXe5h60",
+    "resumo": "Austin Richard Post, conhecido como Post Malone, é famoso por sua habilidade de transitar entre hip hop, pop, R&B e rock. Suas melodias cativantes e letras introspectivas o tornaram um sucesso comercial massivo.",
+    "musicasFamosas": ["Circles", "rockstar", "Sunflower", "Congratulations"],
+    "imagem": "postMalone.jpg"
+},
+{
+    "Nome": "Florence + The Machine",
+    "Descrição": "Banda de indie rock inglesa, liderada pela vocalista Florence Welch.",
+    "genero": "Indie",
+    "ano": "2009",
+    "link": "https://open.spotify.com/artist/1moxjboGR7GNWYIMWsRjgG",
+    "resumo": "Liderada pela poderosa vocalista Florence Welch, a banda é conhecida por seu som dramático e barroco. Suas músicas combinam indie rock com elementos de soul e art pop, criando hinos épicos e emocionantes.",
+    "musicasFamosas": ["Dog Days Are Over", "Shake It Out", "You've Got The Love", "Hunger"],
+    "imagem": "florence + the machine.jpg"
+},
+{
+    "Nome": "The xx",
+    "Descrição": "Trio de indie pop inglês conhecido por seu som minimalista.",
+    "genero": "Indie",
+    "ano": "2009",
+    "link": "https://open.spotify.com/artist/3iOvXCl6edW5Um0fXEBRXy",
+    "resumo": "The xx ganhou aclamação por seu som minimalista e atmosférico, que mistura indie pop, R&B e eletrônica. As letras introspectivas e os vocais sussurrados de Romy e Oliver criam uma atmosfera íntima e melancólica.",
+    "musicasFamosas": ["Intro", "Angels", "Crystalised", "On Hold"],
+    "imagem": "thexx.jpg"
+},
+{
+    "Nome": "Daft Punk",
+    "Descrição": "Duo francês de música eletrônica, pioneiros do French house.",
+    "genero": "Eletrônica",
+    "ano": "2001",
+    "link": "https://open.spotify.com/artist/4tZwfgrHOc3mvqYlEYSvVi",
+    "resumo": "Guy-Manuel de Homem-Christo e Thomas Bangalter, o Daft Punk, são um dos duos mais influentes da história da música eletrônica. Com seus capacetes de robô e uma fusão inovadora de house, funk e disco, eles mudaram o cenário da música pop.",
+    "musicasFamosas": ["Get Lucky", "One More Time", "Around the World", "Harder, Better, Faster, Stronger"],
+    "imagem": "Daftpunk.webp"
+}
+]
