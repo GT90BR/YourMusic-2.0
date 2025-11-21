@@ -409,7 +409,7 @@ header {
 .card--post-malone {
     background: 
         linear-gradient(rgba(32, 33, 36, 0.7), rgba(32, 33, 36, 0.7)),
-        url('postMalone.jpg'); /* Adicione esta imagem à sua pasta */
+        url('postmalone.jpg'); /* Adicione esta imagem à sua pasta */
     background-size: cover;
     background-position: center top;
 }
@@ -662,4 +662,5 @@ header {
     button { /* Estilos para o botão em telas muito pequenas */
         margin-top: 1rem; /* Adiciona margem no topo */
     }
+
 }
