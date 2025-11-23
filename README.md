@@ -32,7 +32,7 @@ CSS3 (com estilização aprimorada e design próprio)
 
 JavaScript (base do projeto da Imersão Dev)
 
-      Estrutura do Projeto:
+      Estrutura do Projeto
 
 O projeto segue a estrutura original fornecida pela Imersão Dev, mantendo:
 
@@ -42,13 +42,13 @@ O esqueleto obrigatório das aulas;
 
 A separação adequada entre HTML, CSS e JavaScript.
 
-     E complementa com:
+     E complementa com
 
 Estilizações personalizadas;
 
 Melhorias na apresentação do conteúdo.
 
-Como Executar:
+Como Executar
 
 Baixe ou clone este repositório;
 
@@ -56,6 +56,6 @@ Abra o arquivo index.html no seu navegador;
 
 Explore os gêneros musicais e artistas!
 
-    Autor:
+    Autor
 
 Gabriel Thomaz Sena Araujo
